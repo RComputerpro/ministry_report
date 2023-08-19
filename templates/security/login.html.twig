@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block header %}
+    <h1 class="text-center text-primary mt-3">Login</h1>
+{% endblock %}
+
+{% block space %}{% endblock %}
+
+{% block content %}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+                <form method="post" class="form-group px-5">
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control my-5" autocomplete="email" required autofocus placeholder="User identifier">
+                    <input type="password" name="password" id="inputPassword" class="form-control my-5" autocomplete="current-password" required placeholder="Password">
+
+                    <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}">
+
+                    {#
+                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                        See https://symfony.com/doc/current/security/remember_me.html
+
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Remember me
+                            </label>
+                        </div>
+                    #}
+
+                    <div class="container my-5">
+                        <div class="row">
+                            <button class="btn btn-primary col-lg-4 md-12" type="submit">
+                            Login
+                            </button>
+                            <h3 class="col-lg-4 md-12 text-center">or</h3>
+
+                            <a class="btn btn-primary col-lg-4 md-12" href="{{ path('app_register') }}">
+                                Create an account
+                            </a>
+                        </div>   
+                    </div>
+
+            </form>
+        
+{% endblock %}
+
+{% block footer %}{% endblock %}

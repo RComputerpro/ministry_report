@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block pageName %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h2 class="text-primary">Welcome {{firstname}}</h2>
+
+<div class="row py-3 text-secondary my-4 d-flex flex-wrap">
+    <div class="col col-md-6 col-xs-12 d-flex flex-column align-items-center mb-5">
+    
+        <h3>Month</h3>
+
+        <svg id="progressMonth" class="shadow">
+            <circle cx="100" cy="100" r="90" class="progress">
+                <div cx="100" cy="100" r="80" class="interiorCircle text-secondary d-flex justify-content-center align-items-center">
+                    <h4 class="text-center"><span class="text-primary fs-3" id="hoursMonth">{{hours}}</span></br>------</br><span id="objHours">{{objHours}}</span></h4>
+                </div>
+            </circle>
+        </svg>
+    </div>
+    
+    <div class="col col-md-6 col-xs-12 d-flex flex-column align-items-center mb-5">
+        <h3>Year</h3>
+
+        <svg id="progressYear" class="shadow">
+            <circle cx="100" cy="100" r="90" class="progress">
+                <div cx="100" cy="100" r="80" class="interiorCircle text-secondary d-flex justify-content-center align-items-center">
+                    <h4 class="text-center"><span class="text-primary fs-3" id="hoursYear">{{yearHours}}</span></br>------</br><span id="yearObjHours">{{objHours * 12}}</span></h4>
+                </div> 
+            </circle>
+        </svg>
+    </div>
+    
+</div>
+
+<script src="/js/dashboard.js"></script>
+
+{% endblock %}

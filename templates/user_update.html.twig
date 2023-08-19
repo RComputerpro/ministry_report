@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+    {{ form_start(updateForm) }}
+        
+        <div id="majMessage"></div>
+        <ul class="list-group">
+            <li class="row-fluid list-group-item list-group-item-action"><button class="bg-transparent border-0" type="button" id="id_et_mdp"><h2>My ID and Password</button></h2>
+                <div id="id_et_mdp_champs">
+                    {{ form_row(updateForm.email) }}
+                    {{ form_row(updateForm.plainPassword, {'label': 'New Password :'})}}
+                    <button type="submit" class="btn btn-primary mt-4">Update informations</button>
+                </div>
+            </li>
+            <li class="row-fluid list-group-item list-group-item-action"><button class="bg-transparent border-0" type="button" id="infos_perso"><h2>My Informations</button></h2>
+                <div id="infos_perso_champs">
+                    {{ form_row(updateForm.firstname) }}
+                    {{ form_row(updateForm.name) }}
+                    <button type="submit" class="btn btn-primary mt-4">Update informations</button>
+                </div>
+            </li>
+            <li class="row-fluid list-group-item list-group-item-action"><button class="bg-transparent border-0" type="button" id="obj_horaire"><h2>My goal</button></h2>
+                <div id="obj_horaire_champs">
+                    {{ form_row(updateForm.statut) }}
+                    <button type="submit" class="btn btn-primary mt-4">Update informations</button>
+                </div>
+            </li>
+        </ul>
+
+        {% if maj %}
+            <script src="/js/maj.js"></script>
+        {% endif %}
+
+    {{ form_end(updateForm) }}
+
+{% endblock %}

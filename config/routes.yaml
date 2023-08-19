@@ -1,0 +1,19 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+dashboard: 
+    path: /
+    controller: App\Controller\DashboardController::index
+
+add_report: 
+    path: /add_report
+    controller: App\Controller\AddReportController::index
+
+report: 
+    path: /report
+    controller: App\Controller\ReportController::index

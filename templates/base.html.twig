@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+           <link rel="stylesheet" href="/styles/app.css">
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+            {% block header %}
+                <header class="container-fluid fixed-top shadow py-3 bg-white" style="height: 5em;">
+                    <div class="row align-items-center mx-3">
+                        <a class="col-4 col-sm-3 col-md-2 btn btn-primary text-light p-1 rounded" href="{{ path('dashboard') }}" style="font-size:0.7em;">Ministry Report</a>
+                        <h1 class="col-7 col-sm-8 col-md-9 text-center text-primary">{% block pageName %}{% endblock %}</h1>
+                        <a id="compte_btn" class="col-1"><i class="bi bi-person-circle fs-2"></i></a>             
+                    </div>
+
+                    <div id="options_menu" class="row-fluid">
+                    <div class="list-group col-12 text-center">
+                        <a id="mon_compte" class="list-group-item p-2" href="{{ path('compte') }}">Mon compte</a>  
+                        <a id="deconnexion" class="list-group-item nav-link p-2" href="{{ path('app_logout') }}">Déconnexion</a>
+                        <button class="bg-white border-0" id="close_options"><i class="bi bi-x-circle"></i></button>  
+                    </div>       
+                </div>
+                </header>
+            {% endblock %}
+
+            {% block space %}
+                <div class="my-5"></div>
+            {% endblock %}
+            
+            <section class="container p-5">
+                <div class="row">
+                    <div class="col-12 col-md-8 col-xs-10 mx-auto bg-light p-4 shadow rounded-4 mb-5", id="content">
+                        {% block content %}
+                        {% endblock %}    
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="col-12 d-flex justify-content-center">
+                        {% block bottom %}{% endblock %}
+                    </div>
+                </div>
+                
+            </section>
+
+            {% block footer %}
+                <footer class="footer fixed-bottom bg-primary" style="height:6em;">
+                    <nav class="navbar navbar-expand navbar-dark">
+                        <ul class="navbar-nav col-12 d-flex justify-content-around">
+                            <li class="nav-item active"><a id='dashboard' href ="{{ path('dashboard') }}" class="nav-link text-center"><i class="bi bi-speedometer fs-2"></i><br/><p style="font-size:0.6em;">Dashboard</p></a></li>
+                            <li class="nav-item"><a id='add_report' href ="{{ path('add_report') }}" class="nav-link text-center"><i class="bi bi-folder-plus fs-2"></i></br><p style="font-size:0.6em;">Add</p></a></li>
+                            <li class="nav-item"><a id='report' href ="{{ path('report') }}" class="nav-link text-center"><i class="bi bi-tablet-landscape fs-2"></i></br><p style="font-size:0.6em;">Report</p></a></li>
+                        </ul>   
+                    </nav>
+                </footer>
+            {% endblock %}
+           
+        {% endblock %}
+
+    </body>
+
+    {% block javascripts %}
+            <script src="/js/compte.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    {% endblock %}
+</html>

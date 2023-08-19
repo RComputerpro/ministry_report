@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add{% endblock %}
+
+{% block pageName %}Add{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+        <div class="form-group d-flex flex-column">
+            <div class='row'>{{ form_row(form.date) }}</div>
+            <div class='row'>{{ form_row(form.hours) }}</div>
+            <div class='row'>{{ form_row(form.publications) }}</div>
+            <div class='row'>{{ form_row(form.videos) }}</div>
+            <div class='row'>{{ form_row(form.nv_visites) }}</div>
+            <div class='row'>{{ form_row(form.studies) }}</div>
+            <input type="submit" value="Valider" class="btn btn-primary mt-4">
+        </div>
+    {{ form_end(form) }}
+
+{% endblock %}

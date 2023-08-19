@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <h1 class="text-center text-primary mt-3">Create an account</h1>
+{% endblock %}
+
+{% block space %}{% endblock %}
+
+{% block content %}
+    
+    {{ form_start(registrationForm, {'attr': {'class': "form-group"}}) }}
+
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.firstname) }}
+        {{ form_row(registrationForm.statut) }}
+
+        <button type="submit" class="btn btn-primary mt-3">Create an account</button>
+
+    {{ form_end(registrationForm) }}
+
+    {% block footer %}{% endblock %}
+{% endblock %}

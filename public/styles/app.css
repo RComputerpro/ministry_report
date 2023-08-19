@@ -1,0 +1,51 @@
+.hide {
+    opacity: 0%;
+    margin-top: -2%;
+}
+
+.masque {
+    opacity: 0%;
+    margin-top: -2%;
+    transition-duration: 1s;
+}
+
+.aff {
+    opacity: 100%;
+    transition-duration: 1s;
+    margin-top: 0%;
+}
+
+.champsUserUpdateMasque {
+    opacity: 0%;
+    margin-bottom: -5em;
+    transition-duration: 0.5s;
+}
+
+.champsUserUpdateAff {
+    margin-bottom: 2em;
+    opacity: 100%;
+    transition-duration: 0.5s;
+}
+
+#progressMonth, #progressYear {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    stroke: rgba(16, 104, 255, 0.526);
+    stroke-width: 20px;
+    stroke-dasharray: 565.2;
+    stroke-dashoffset: 565.2;
+}
+
+.progress {
+    fill: none;
+}
+
+.interiorCircle {
+    background-color: transparent;
+    margin-top: -180px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.197) inset;
+}
