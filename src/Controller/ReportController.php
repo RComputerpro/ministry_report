@@ -123,7 +123,6 @@ class ReportController extends AbstractController {
 
         $this->yearHours->i = $minutesTotales % 60;
         $this->yearHours->h = ($minutesTotales - ($minutesTotales % 60)) / 60;
-        dump($this->getYearData());
     }
 
     //getters et setters
