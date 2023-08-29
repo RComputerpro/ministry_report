@@ -6,52 +6,61 @@
 
 {% block content %}
     <div id="yearDataContainer" data-yearData="{{ year_data }}"></div>
-        <table class="table table-bordered table-hover" id ="ministryReportTable">
-            <tr>
-                <td>Name</td>
-                <td id="nameCell" class="col-8 text-center align-middle">{{ name }}</td>
-            </tr>
-            <tr>
-                <td>MONTH</td>
-                <td id="monthCell" class="text-center align-middle"></td>
-            </tr>
-        </table>
+    <table class="table table-hover" id ="ministryReportTable">
+        <tr>
+            <td class="border border-1">Name</td>
+            <td id="nameCell" class="col-8 border border-1 text-center align-middle">{{ name }}</td>
+        </tr>
+        <tr>
+            <td class="border border-1">MONTH</td>
+            <td id="monthCell" class="border border-1 text-center align-middle"></td>
+        </tr>
+    </table>
 
-        <table class="table table-bordered table-hover">
-            <tr>
-                <td>Publications</td>
-                <td id="PubCell" class="col-3 text-center align-middle"></td>
-            </tr>
-            <tr>
-                <td>Videos</td>
-                <td id="VidCell" class="text-center align-middle"></td>
-            </tr>
-            <tr>
-                <td>Hours</td>
-                <td id="HoursCell" class="text-center align-middle"></td>
-            </tr>
-            <tr>
-                <td>Return Visits</td>
-                <td id="NvCell" class="text-center align-middle"></td>
-            </tr>
-            <tr>
-                <td>Studies</td>
-                <td id="StudCell"  class="text-center align-middle"></td>
-            </tr>
-        </table>
+    <table class="table table-hover">
+        <tr>
+            <td class="border border-1">Publications</td>
+            <td id="PubCell" class="col-3 border border-1 text-center align-middle"></td>
+        </tr>
+        <tr>
+            <td class="border border-1">Videos</td>
+            <td id="VidCell" class="border border-1 text-center align-middle"></td>
+        </tr>
+        <tr>
+            <td class="border border-1">Hours</td>
+            <td id="HoursCell" class="border border-1 text-center align-middle"></td>
+        </tr>
+        <tr>
+            <td class="border border-1">Return Visits</td>
+            <td id="NvCell" class="border border-1 text-center align-middle"></td>
+        </tr>
+        <tr>
+            <td class="border border-1">Studies</td>
+            <td id="StudCell"  class="border border-1 text-center align-middle"></td>
+        </tr>
+    </table>
 
-        <table class="table table-bordered table-hover">
-            <tr>
-                <td colspan=2>Remarques :</td>
-            </tr>
-        </table>
+    <table class="border border-1 table table-hover">
+        <tr>
+            <td colspan=2>Remarques :</td>
+        </tr>
+    </table>
 {% endblock %}
 
 {% block bottom %}
 
     <button id="rmMonth" class="btn btn-primary bi bi-chevron-compact-left" style="position: absolute; left:5%; top:40%;"></button>
-    <button type="button" class="btn btn-primary">Share</button>
+    <div class="mb-5">
+        <button id="share" class="btn btn-primary mb-5">Share</button>
+    </div>
+    
     <button id="addMonth" class="btn btn-primary bi bi-chevron-compact-right" style="position: absolute; right:5%; top:40%;"></button>
-
+    
     <script src="/js/defineMonth.js"></script>
+
+    <script src="/js/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="/styles/table.css">
+
+    <script src="/js/share.js"></script>
 {% endblock %}
